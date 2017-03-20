@@ -3,12 +3,14 @@
 define([
   'underscore',
   'backbone',
+  'backboneLocalstorage',
   'models/Message'
-], function (_, Backbone, MessageModel) {
+], function (_, Backbone, Store, MessageModel) {
   'use strict';
 
   var MessageCollection = Backbone.Collection.extend({
-    model: MessageModel
+    model: MessageModel,
+    localStorage: new Store('messages')
   });
 
   return MessageCollection;

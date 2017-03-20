@@ -3,12 +3,22 @@
 
 require.config({
   shim: {
+    socketio: {
+      exports: 'io'
+    },
     bootstrap: {
       deps: ['jquery'],
       exports: 'jquery'
     },
       handlebars: {
       exports: 'Handlebars'
+    },
+    backboneLocalstorage: {
+      deps: ['backbone'],
+      exports: 'Store'
+    },
+    moment: {
+      exports: 'moment'
     }
   },
   paths: {
@@ -16,7 +26,10 @@ require.config({
     backbone: '../bower_components/backbone/backbone',
     underscore: '../bower_components/lodash/dist/lodash',
     bootstrap: '../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap',
-    handlebars: '../bower_components/handlebars/handlebars'
+    handlebars: '../bower_components/handlebars/handlebars',
+    backboneLocalstorage: '../bower_components/backbone.localstorage/backbone.localStorage',
+    socketio: '../bower_components/socket.io-client/dist/socket.io',
+    moment: '../bower_components/moment/min/moment.min'
   }
 });
 
@@ -25,5 +38,5 @@ require([
   'routes/app'
 ], function (Backbone, AppRouter) {
   new AppRouter();
-  Backbone.history.start();
+  Backbone.history.start({pushState: true, hashChange: false});
 });

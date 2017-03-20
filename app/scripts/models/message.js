@@ -13,6 +13,10 @@ define([
     },
 
     defaults: {
+      msg: '',
+      date: function () {
+        new Date();
+      }
     },
 
     validate: function(attrs, options) {

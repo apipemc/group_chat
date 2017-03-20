@@ -30,17 +30,20 @@ define([
     },
 
     initialize: function () {
-      //this.listenTo(this.model, 'change', this.render);
+      var nickname = localStorage.getItem('nickname');
+      if(nickname !== null || nickname !== undefined){
+        Backbone.history.navigate('/chat', {trigger:true, replace: true});
+      }
     },
 
     render: function () {
       this.$el.html(this.template());
-      return this;
     },
 
     onLogin: function(e){
       e.preventDefault();
-      Backbone.history.navigate('/chat', true);
+      localStorage.setItem("nickname", this.serialize().nickname);
+      Backbone.history.navigate('/chat', {trigger:true, replace: true});
     }
 
   });
