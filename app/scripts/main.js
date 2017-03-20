@@ -38,5 +38,5 @@ require([
   'routes/app'
 ], function (Backbone, AppRouter) {
   new AppRouter();
-  Backbone.history.start({pushState: true, hashChange: false});
+  Backbone.history.start();
 });

@@ -32,7 +32,7 @@ define([
     initialize: function () {
       var nickname = localStorage.getItem('nickname');
       if(nickname !== null || nickname !== undefined){
-        Backbone.history.navigate('/chat', {trigger:true, replace: true});
+        Backbone.history.navigate('/chat', true);
       }
     },
 
@@ -42,8 +42,9 @@ define([
 
     onLogin: function(e){
       e.preventDefault();
-      localStorage.setItem("nickname", this.serialize().nickname);
-      Backbone.history.navigate('/chat', {trigger:true, replace: true});
+      var nickname = this.serialize().nickname;
+      localStorage.setItem("nickname", nickname);
+      Backbone.history.navigate('/chat', true);
     }
 
   });

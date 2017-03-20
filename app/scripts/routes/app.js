@@ -12,7 +12,8 @@ define([
 
     routes: {
       '' : 'login',
-      'chat': 'chat'
+      'chat': 'chat',
+      '*default': 'login'
     },
 
     initialize: function(){
@@ -25,7 +26,7 @@ define([
       });
 
       this.on('route:chat', function(){
-        chatView.render();
+        chatView.initialize();
       });
 
     }
