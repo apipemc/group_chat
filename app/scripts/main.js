@@ -13,12 +13,12 @@ require.config({
       handlebars: {
       exports: 'Handlebars'
     },
+    moment: {
+      exports: 'moment'
+    },
     backboneLocalstorage: {
       deps: ['backbone'],
       exports: 'Store'
-    },
-    moment: {
-      exports: 'moment'
     }
   },
   paths: {
@@ -27,9 +27,9 @@ require.config({
     underscore: '../bower_components/lodash/dist/lodash',
     bootstrap: '../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap',
     handlebars: '../bower_components/handlebars/handlebars',
-    backboneLocalstorage: '../bower_components/backbone.localstorage/backbone.localStorage',
     socketio: '../bower_components/socket.io-client/dist/socket.io',
-    moment: '../bower_components/moment/min/moment.min'
+    moment: '../bower_components/moment/min/moment.min',
+    backboneLocalstorage: '../bower_components/backbone.localStorage/backbone.localStorage-min',
   }
 });
 
