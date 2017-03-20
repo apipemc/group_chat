@@ -36,3 +36,15 @@ Must have tests, just few but tests...
 
 * fork this repo
 * create a PR with the implementation and URL to checkit
+
+# Run Project:
+Build Back-End
+
+Install packages
+
+`pip install -r requirements.txt` or fix local `pip install -r requirements.txt -t .`
+
+Run Serve
+
+`python chat.py`
+
